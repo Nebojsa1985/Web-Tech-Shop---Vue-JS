@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("./img/cover.jpg");
+    background-size: 100% 100%;
+    color: rgb(45, 102, 151);
+    font-family: "Poppins", sans-serif;   
+    font-size: 23px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #0e1111;
+    color: aliceblue;
+    min-height: 40px;
+    padding: 10px;  
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;    
+}
+
+.heading-name {
+    font-size: 25px;
+    font-weight: bolder;
+    color: rgb(45, 102, 151);
+    text-shadow: 2px 1px 1px cornflowerblue;
+    border-radius: 4px;
+}
+
+.heading-name:hover {
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 21px #0fa,
+      0 0 41px #0fa,
+      0 0 50px #0fa,
+      0 0 50px #0fa,
+      0 0 71px #0fa;
+    cursor: pointer; 
+    box-shadow: cornflowerblue 0px 0px 0px 0px;   
+    color: rgb(119, 171, 154);
+}
+
+.logo {
+    background: url("./img/logo.png");
+    background-size: 100% 100%;
+    width: 5vw;
+}
+
+.cart-div {
+    margin-left: auto;  
+    margin-right: 20px;
+    margin-top: 10px;  
+    margin-bottom: 10px;    
+}
+
+.cart-div button {
+    width: 18vw;
+    box-shadow: 1px 2px 0px  rgb(186, 196, 205);
+}
+
+.cart-inputs {
+    display: flex;
+    justify-content: center;
+}
+
+.shop-page {
+    margin-top: 90px;
+    margin-bottom: 50px;    
+}
+
+.proizvodi {
+    display: grid;
+    grid-template-columns: repeat(3, auto)
+}
+
+.proizvod {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 3px dashed burlywood;
+    border-radius: 16px;
+    margin: 10px;
+    padding: 20px 0px 20px 0px;
+}
+
+.proizvod:hover {
+    border: 3px dashed rgb(45, 102, 151); 
+}
+
+.proizvodi-kolicina {
+    padding: 0px 10px 0px 10px;
+    width: 200px;
+}
+
+img {
+    width: 30vw;
+    height: 400px;
+    object-fit: fill;
+}
+
+.facture-query {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.facture-query > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 60px 20px 60px;
+}
+
+input {
+    outline: none;
+    color: rgb(169, 148, 148);
+    padding: 0.3rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.1s linear;
+    margin-bottom: 5px;
+    min-width: 370px;
+}
+
+button {
+    background-color: rgb(45, 102, 151);
+    color: white;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.1s linear;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active {
+    box-shadow: 0;
+    transform: translate(2px, 2px);
+}
+
+.footer {
+    position: fixed;
+    padding: 0px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    background-color: #0e1111;
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px 1px 1px cornflowerblue;
+}
+
+@media screen and (max-width: 420px) {
+    .proizvodi {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+    }
+    img {
+        width: 80vw;
+    }
+    .facture-query {
+        grid-template-columns: auto;
+    }
+    .logo {
+        width: 15vw;
+    }
+    .heading-name {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 920px) and (min-width: 421px) { 
+    .proizvodi {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+    }
+    img {
+        width: 80vw;
+    }
+    .facture-query {
+        grid-template-columns: auto;
+    }
+    .logo {
+        width: 15vw;
+    }
+    .heading-name {
+        margin-top: 20px;
+        font-size: 20px;
+     }
+    .footer {
+        font-size: 17px;
+        padding: 1px;
+    }
+}

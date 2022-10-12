@@ -1,0 +1,81 @@
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>VueJs Web Shop</title>
+      <link rel="stylesheet" href="vue.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+   </head>
+   <body>
+      <div id="app">
+<!-- navbar -->
+         <nav>
+            
+            <div class="logo">
+            </div>
+
+            <div class="heading-name">
+            <h1>Web Tech Shop</h1>          
+            </div>
+
+            <div class="cart-div">
+               <button class="cart-div-button" @click="[showFactureQuery=!showFactureQuery,showProducts=!showProducts,showBackBtn=!showBackBtn,showCartBtn=!showCartBtn]" >
+                  <div class="btn-cart" v-if="showCartBtn">
+                  <span>Cart</span>
+                  <i class="fas fa-shopping-cart"><span> {{ totalQuantity }}</span></i>
+                  </div>
+                  <div class="btn-back" v-if="showBackBtn">
+                  <span>Back</span>
+                  </div>
+               </button>             
+            </div>
+         </nav>
+<!-- navbar end-->
+         <div class="shop-page">
+         <div class="facture-query" v-if="showFactureQuery">    
+
+            <div class="cart-inputs">
+               <h3>Enter your data to get pre-facture</h3>
+                  <label>First name: </label><input id="firstName" type="text">             
+                  <label>Last name: </label><input id="lastName" type="text">   
+                  <label>Email: </label><input id="email" type="email">               
+                  <label>ID number: </label><input id="idNumber" type="text">                    
+                  <label>Address: </label><input id="address" type="text">                 
+                  <button @click="factureAlert()">Click to order <i class="fa-solid fa-money-check-dollar"></i></button>
+            </div> 
+
+            <div>
+               <h1>Total price: {{ totalPrice }} $</h1>
+            <ul>
+               <li v-for="product in cart" :key="product.id">
+               {{ product.name }} ({{ product.quantity }}) {{ product.quantity * product.price}} $
+               </li>
+            </ul>               
+         </div>            
+       
+         </div>
+
+<!-- proizvodi -->
+      <section class="proizvodi" v-if="showProducts">
+         <div class="proizvod" v-for="product in products" :key="product.id">
+            <h3>{{ product.name }}</h3>
+            <img v-bind:src = "product.img" alt="product.name">
+            <p>{{ product.description }}</p>
+            <h2>{{ product.price }} $</h2>
+            <div>
+               <button @click="updateCart(product, 'subtract')">-</button>
+               <span class="proizvodi-kolicina">{{ product.quantity }}</span>
+               <button  @click="updateCart(product, 'add')">+</button>
+            </div>
+         </div>
+      </section> 
+<!-- proizvodi end-->
+      </div> 
+      <div class="footer">Contact us: +338 1145 654 - webtechshop@gmail.com</div>
+      </div>
+      <script type = "text/javascript" src = "js/vue.js"></script>
+   </body>
+</html>
